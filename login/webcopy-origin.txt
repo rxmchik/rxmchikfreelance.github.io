@@ -1,0 +1,24 @@
+Uri: https://app.frontpad.ru/favicon.ico
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\favicon.ico
+Content Type: image/x-icon
+
+Uri: https://app.frontpad.ru/login/?user_exit
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\login\index.htm
+Content Type: text/html
+
+Uri: https://app.frontpad.ru/login/blocks/code/codegen.php?a1707169391=
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\login\blocks\code\codegen.php
+Content Type: image/png
+
+Uri: https://app.frontpad.ru/login/js/lib.js
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\login\js\lib.js
+Content Type: application/javascript
+
+Uri: https://app.frontpad.ru/login/passrem.php
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\login\passrem.php.html
+Content Type: text/html
+
+Uri: https://www.google.com/recaptcha/api.js?render=6LdXzuwaAAAAADvuRZbbYWZUIaov1iH0kagHQfCT
+File Name: F:\wget\app.frontpad.ru\login\app.frontpad.ru\recaptcha\api.js
+Content Type: text/javascript
+

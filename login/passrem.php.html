@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<title>Frontpad</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+<head>
+<script type="text/javascript" src="js/lib.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+<style>
+body {width:100%; height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#555; background:#737f88;}
+h1 {margin:0; font-size:22px; color:#333; font-weight:100; text-transform:uppercase;}
+.enter_back {position:absolute; top:50%; left:50%; width:300px; height:20px; margin:-165px 0 0 -190px; padding:0 40px;}
+.enter_back a {color:#fff;}
+.enter_form {position:absolute; top:50%; left:50%; width:300px; height:200px; margin:-130px 0 0 -190px; padding:30px 40px; background:#f3f4f5; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.25); -moz-box-shadow: 0 4px 15px rgba(0,0,0,0.25); box-shadow: 0 4px 15px rgba(0,0,0,0.25);}
+.enter_form a {font-size:13px; color:#676e75;}
+.enter_error {position:absolute; top:50%; left:50%; width:300px; min-height:20px; margin:-240px 0 0 -190px; padding:0 40px; color:#fff; font-size:13px;}
+.input {width:90%; margin:0; padding:6px 8px; font-size:14px; color:#444; border:1px solid #bdc3c7; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;}
+.input.code {width:40%;}
+.code_img {width:100px; height:30px; margin:0 6px 0 0; cursor:pointer; float:right;}
+.btn {margin:0; padding:6px 12px; color:#fff; font-weight:300; text-decoration:none; cursor:pointer; background:#429edb; border:none; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px;}
+</style>
+<script>
+function codegen(id) {
+	$("#"+id).attr("src","blocks/code/codegen.php?rand="+Math.random())
+}
+function action() {
+	$("#status").html(""); document.getElementById('registrationForm').submit();
+}
+</script>
+</head>
+<body>
+<div class="enter_bg">
+<div class="enter_back"><a href="/login">назад</a></div>
+<div class="enter_form">
+
+	<table width='100%' height='100%' border='0' cellpadding='0' cellspacing='0'>
+	<tr valign='top'><td colspan='3'><form action='' method='post'><h1>Восстановление</h1>пароля администратора аккаунта</form></td></tr>
+	<tr><td align='left' width='60'>Email</td><td colspan='2'><input name='login' maxlength='50' class='input'></td></tr>
+	<tr><td align='left' width='60'>Код</td><td colspan='2'><input name='passrem_code' maxlength='50' class='input code'> <img id='passrem_code' src='blocks/code/codegen.php?a1707169391=' onclick="codegen('passrem_code');" class='code_img'></td></tr>
+	<tr valign='middle'><td colspan='3' align='right'><input type='submit' value='Далее' class='btn b'></form></td></tr>
+	</table>
+	</div>
+</div>
+</body>
+

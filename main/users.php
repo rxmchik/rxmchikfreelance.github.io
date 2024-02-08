@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<title>Frontpad</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" media="all" href="css/style.css?20220425">
+<link rel="stylesheet" type="text/css" media="all" href="css/handsontable.full.css">
+<script type="text/javascript" src="js/yandexMapLib2060.js?20210608"></script>
+<script type="text/javascript" src="js/lib.js"></script>
+<script type='text/javascript' src='js/lib3.1.9b.js?20231206'></script><script type="text/javascript">
+var api_check;
+var api_checker_id;
+</script>
+<script type="text/javascript" src="js/common.js?20220228"></script>
+<script type="text/javascript" src="js/front.js?2023101720231017"></script>
+<script type="text/javascript" src="js/orders.js?2021021820210218"></script>
+<script type="text/javascript" src="js/store.js?20210602"></script>
+<script type="text/javascript" src="js/square.js?20191104"></script>
+<script type="text/javascript" src="js/handsontable.full.js"></script>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript">
+
+function exit() {
+	window.onbeforeunload = null;
+	document.location.href = "/login/?user_exit";
+}
+$(document).ready(function() {
+	$("#billDatetime").mask("99.99.9999 99:99:99");
+
+	$('#billStreet').autosearch('blocks/function/street.php?search_street=', {
+		delay:200, minChars:4, cacheLength:300, maxItemsToShow:10, width:264, selectFirst:true, matchSubset:1, matchContains:1, fieldFill:true
+	});
+
+	$('#billPhone').autosearch('blocks/function/client.php?search_phone=', {
+		delay:200, minChars:4, cacheLength:300, maxItemsToShow:10, width:264, selectFirst:true, matchSubset:1, matchContains:1, refreshCache:true
+	});
+
+	$('#billProductSearch').autosearch('blocks/function/catalog.php?search_product=', {
+		delay:200, minChars:3, cacheLength:300, maxItemsToShow:10, width:366, selectFirst:true, matchSubset:1, matchContains:1
+	});
+
+	menu('front','front');});
+
+var gs_print_frame;var gs_point = [];var gs_pay_type = '';var gs_pay_types = [];gs_pay_types[1]='Оплачен';gs_waiter_multi = '';var gs_waiter_name = []; var gs_waiter_fired = []; var gs_waiter_affiliate = [];gs_waiter_name[1649]='Петров В. В.';gs_waiter_fired[1649]='';gs_waiter_affiliate[1649]='';var gs_status_id = []; var gs_status_name = []; var gs_status_color = []; var gs_status_color2 = [];gs_status_id[0]='1';gs_status_name[1]='Новый';gs_status_color[1]='#f4959d';gs_status_color2[1]='#e7707d';gs_status_id[1]='3';gs_status_name[3]='В производстве';gs_status_color[3]='#88e2e2';gs_status_color2[3]='#28cacc';gs_status_id[2]='12';gs_status_name[12]='Произведен';gs_status_color[12]='#bbe8a4';gs_status_color2[12]='#83d160';gs_status_id[3]='4';gs_status_name[4]='В пути';gs_status_color[4]='#fff58e';gs_status_color2[4]='#ffce45';gs_status_id[4]='10';gs_status_name[10]='Выполнен';gs_status_color[10]='#ffffff';gs_status_color2[10]='#f1f1f1';gs_status_id[5]='11';gs_status_name[11]='Списан';gs_status_color[11]='#b9c5d2';gs_status_color2[11]='#959fac';var gs_tag_name = [];var currency = 'грн.';var front_clear = '';var gs_show_client_name = '';var gs_jump_to_order = '';gs_bill_round = '';var pay_type_auto = '';var gs_print_type=[]; var gs_print_name=[];gs_print_type[0]='order_print.php?';gs_print_name[0]='80 мм';gs_print_type[1]='order_print.php?w58=';gs_print_name[1]='58 мм';var gs_print_quick;var surrender = '';var order_count = 3;var order_limit = 2000;</script>
+</head>
+<body>
+<div class="top">
+<div class="menu"><ul>
+<li onclick="menu('front','');yaCounter16873678.hit('front');"><div class='im m_front'></div>Новый заказ<ul></ul></li><li onclick="menu('orders','orders');yaCounter16873678.hit('orders');"><div class='im m_orders'></div>Заказы<ul></ul></li><li ><div class='im m_sprav'></div>Справочники<ul><li onclick="menu('catalog','catalog');yaCounter16873678.hit('catalog');">Товары</li><li onclick="menu('component','component');yaCounter16873678.hit('component');">Компоненты (сырье)</li><li onclick="menu('client','client');yaCounter16873678.hit('client');">Клиенты</li><li onclick="menu('employee','employee');yaCounter16873678.hit('employee');">Сотрудники</li><li onclick="menu('shedule','shedule');yaCounter16873678.hit('shedule');">Расписание курьеров</li><li onclick="menu('certificate','certificate');yaCounter16873678.hit('certificate');">Сертификаты</li><li onclick="menu('sale','sale');yaCounter16873678.hit('sale');">Скидки</li><li onclick="menu('margin','margin');yaCounter16873678.hit('margin');">Наценки</li><li onclick="menu('status','status');yaCounter16873678.hit('status');">Статусы</li><li onclick="menu('tags','tags');yaCounter16873678.hit('tags');">Отметки заказов</li><li onclick="menu('pay_types','pay_types');yaCounter16873678.hit('pay_types');">Варианты оплаты</li><li onclick="menu('distributor','distributor');yaCounter16873678.hit('distributor');">Поставщики</li><li onclick="menu('reason','reason');yaCounter16873678.hit('reason');">Причины списания</li><li onclick="menu('edi','edi');yaCounter16873678.hit('edi');">Единицы измерения</li><li onclick="menu('street','street');yaCounter16873678.hit('street');">Улицы</li><li onclick="menu('positions','positions');yaCounter16873678.hit('positions');">Должности</li></ul></li><li ><div class='im m_store'></div>Склад<ul><li onclick="menu('s_orders','s_orders');yaCounter16873678.hit('s_orders');">Накладные</li><li onclick="menu('s_writeoff','s_writeoff');yaCounter16873678.hit('s_writeoff');">Списания</li><li onclick="menu('s_issue','s_issue');yaCounter16873678.hit('s_issue');">Выпуск</li><li onclick="menu('s_movement','s_movement');yaCounter16873678.hit('s_movement');">Перемещение</li><li onclick="menu('s_stock','s_stock');yaCounter16873678.hit('s_stock');">Остатки</li><li onclick="menu('s_revis','s_revis');yaCounter16873678.hit('s_revis');">Инвентаризации</li><li onclick="menu('auto','auto');yaCounter16873678.hit('auto');">Автосписание</li></ul></li><li ><div class='im m_cash'></div>Деньги<ul><li onclick="menu('cashbox','cashbox');yaCounter16873678.hit('cashbox');">Касса</li><li onclick="menu('costs','costs');yaCounter16873678.hit('costs');">Прочие расходы</li><li onclick="menu('salary','salary');yaCounter16873678.hit('salary');">Зар. плата</li></ul></li><li ><div class='im m_stat'></div>Статистика<ul><li onclick="menu('stat','stat');yaCounter16873678.hit('stat');">Сводка</li><li onclick="menu('reports','reports');yaCounter16873678.hit('reports');">Отчеты</li><li onclick="menu('timesheet','timesheet');yaCounter16873678.hit('timesheet');">Табель</li></ul></li><li ><div class='im m_settings'></div>Настройки<ul><li onclick="menu('payment','payment');yaCounter16873678.hit('payment');">Лицевой счет и тариф</li><li onclick="menu('users','users');yaCounter16873678.hit('users');">Пользователи</li><li onclick="menu('couriers','couriers');yaCounter16873678.hit('couriers');">Доступ курьеров</li><li onclick="menu('settings','settings');yaCounter16873678.hit('settings');">Общие</li><li onclick="menu('print_settings','print_settings');yaCounter16873678.hit('print_settings');">Печать чека</li><li onclick="menu('marketing','marketing');yaCounter16873678.hit('marketing');">Каналы продаж</li><li onclick="menu('square','square');yaCounter16873678.hit('square');">Карта и зоны доставки</li><li onclick="menu('affiliates','affiliates');yaCounter16873678.hit('affiliates');">Филиалы</li><li onclick="menu('point','point');yaCounter16873678.hit('point');">Точки продаж</li><li onclick="menu('workshop','workshop');yaCounter16873678.hit('workshop');">Типы цехов</li></ul></li><span onclick='exit();'><li class='menu_user'><div class='user'>aziat test</div>Выйти</li></span><a href='http://frontpad.ru/help/' target='_blank'><li class='menu_user'><div class='im m_help'></div>Помощь</li></a><li class='menu_user' id='fr_status' style='display:none;'><div class='im m_fr_dis'></div>ФР</li>	</ul>
+</div>
+</div>
+<div class="main" id="main">
+    <div class="section" id="front">
+<div id="front_tabs" class="front_tabs">
+	<div id="tab_bill" onclick="tabSelect('front_tabs','tab_bill');" class="front_tab selected">Заказ</div>
+	<div id="tab_details" onclick="tabSelect('front_tabs','tab_details');" class="front_tab">Детали</div>
+	<div id="tab_tags" onclick="tabSelect('front_tabs','tab_tags');" class="front_tab">Отметки</div>
+</div>
+
+<div class="front_basket">
+   <div id="front_tabsCont">
+      <div id="tab_billCont">
+         <table width='100%' border='0' cellpadding='0' cellspacing='0'>
+			<tr class='tr_basket_title' align='center'><td></td><td align='left'>Наименование</td><td width='16'></td><td width='35'>Кол.</td><td width='16'></td><td width='65'>Цена</td><td width='80' >Стоимость</td><td></td></tr>
+			<tbody id="billBasket"></tbody>
+         </table>
+      </div>
+      <div id="tab_detailsCont" style="display:none;">
+         <table width="100%" border="0" cellpadding="0" cellspacing="0">
+         <tr class="tr_details" height="20"><td></td><td width="90"></td><td width='270'></td><td width='40'></td></tr>
+         <tr class='tr_details' style='display:none;'><td></td><td colspan='2'><select id='billPoint'><option value=','></option></select></td></tr>
+         <tr class="tr_details"><td></td><td>Карта</td><td colspan="2"><input id='billCard' value='' size='20' maxlength='16' autocomplete='off' class='input' /> <span onclick='searchCard();' class='btn grey order'>Найти</span></td></tr>
+         <tr class="tr_details_grey"><td></td><td>Телефон</td><td><input id='billPhone' value='' style='width:250px;' maxlength='50' autocomplete='off' class='input' onfocus="$(this).attr('info',$(this).val())" onblur="if($(this).val()!=$(this).attr('info')&&$(this).attr('info')>0){billLoadSale();}" info='' /></td><td id='bill_client_buttons' align="left"></td></tr>
+
+         <tr class="tr_details" height="20"><td colspan='4'></td></tr>
+         <tr class="tr_details" id='billNameTr' style='display:none;' ><td></td><td>Имя</td><td colspan="2"><input id='billName' value='' style='width:250px;' maxlength='50' autocomplete='off' class='input' /></td></tr>
+         <tr class="tr_details" id='billClientDescrTr' style='display:none;'><td></td><td></td><td colspan="2"><div id='billClientDescr' class='input' style='width:250px; overflow:auto;'></div></td></tr>
+         <tr class="tr_details"><td></td><td>Улица</td><td colspan="2"><input id='billStreet' value='' style="width:250px; float:left;" maxlength='100' autocomplete='off' class='input' /><div id="dop_address_list" class='ac_results'></div></td></tr>
+         <tr class="tr_details"><td></td><td>Дом</td><td colspan="2"><input id='billHome' value='' style='width:250px;' maxlength='50' autocomplete='off' class='input' /></td></tr>
+         <tr class="tr_details"><td></td><td>Подъезд</td><td colspan="2"><input id='billPod' value='' size='5' maxlength='2' autocomplete='off' class='input' /></td></tr>
+         <tr class="tr_details"><td></td><td>Этаж</td><td colspan="2"><input id='billEt' value='' size='5' maxlength='2' autocomplete='off' class='input' /></td></tr>
+         <tr class="tr_details"><td></td><td>Кв. (офис)</td><td colspan="2"><input id='billKvart' value='' style='width:250px;' maxlength='50' autocomplete='off' class='input' /></td></tr>
+         <tr class="tr_details"><td></td><td>Примечание</td><td colspan="2"><textarea id='billDescr' style='width:250px;' maxlength='250' autocomplete='off' class='input'></textarea></td></tr>
+                  </table>
+      </div>
+      <div id="tab_tagsCont" style="display:none;">
+         <table width='100%' border='0' cellpadding='0' cellspacing='0'>
+         <tr class="tr_details" height="20"><td width='18'></td><td width="90"></td><td></td></tr>
+         <tr class="tr_details">
+            <td><span class='icon help' onclick="$('#help_prebill').show();"></span><div id='help_prebill' class='help_popup'>Позволяет создавать заказ на определенную дату. Предзаказ отображается как обычный заказ на дату предзаказа.<span class='help_popup_close' onclick="$('#help_prebill').hide();"></span></div></td>
+            <td>Предзаказ</td><td align="left"><input id='billDatetime' name='billDatetime' class='input' style='width:140px;' onblur="billBasketShow();"/> <span class='icon calendar'  onclick="displayDatePicker('billDatetime', false, 'dmy h:i:s', '.');"></span></td>
+         </tr>
+         <tr class="tr_details"  id="tr_prebill_list" style="display:none;"><td></td><td></td><td align="left" id="prebill_list"></td></tr>
+         <tr class="tr_details">
+            <td><span class='icon help' onclick="$('#help_bill_certificate').show();"></span><div id='help_bill_certificate' class='help_popup'>С помощью сертификата можно добавлять в заказ подарки или товары с заданной ценой.<br />Сертификаты создаются в соответствующем справочнике.<span class='help_popup_close' onclick="$('#help_bill_certificate').hide();"></span></div></td>
+            <td>Сертификат</td><td align="left"><input id='billCertificate' autocomplete='off' class='input' style='width:140px;' /> <span onclick='searchCertificate();' class='btn grey order'>Найти</span></td>
+         </tr>
+
+         <tr class='tr_details' align='left'><td></td><td>Оплата</td><td><select id='billPay' style='width:70px;'><option value='0' selected='selected' > </option><option value='1'>Оплачен</option></select></td></tr><tr class='tr_details' height='20'><td colspan='4'></td></tr><tr class='tr_details' valign='top' align='left'><td></td><td>Отметок нет</td><td id='billTag'></td></tr>         </table>
+      </div>
+   </div>
+</div>
+<div class="front_buttons">
+   <table width='100%' height="100%" border='0' cellpadding='0' cellspacing='0' id="billButtons">
+   <tr valign="middle">
+   <td style="padding-left:13px;">
+      <div id='bill_sale_block'></div>
+   </td>
+   <td width="200" align="center">
+      <div style="font-size:16px;">К оплате <b id="bill_total"></b> грн.</div>
+   </td>
+   <tr height="50">
+   <td>
+      <div onclick="tooltip('bill_sale_tooltip',this);" class="btn bill grey persent"><span></span></div>
+            <div id='bill_client_score' class="btn bill grey more" style='display:none;'>Счет<div class="mb"></div></div>
+   </td>
+   <td align="right">
+		<div onclick="orderSave();" class="btn bill save save" style='margin-right:10px; float:right;'>Сохранить</div>
+		<div onclick="billBasketClear();" class="btn bill grey trash" style='float:right;'><span></span></div>
+   </td>
+   </tr>
+   </table>
+</div>
+
+<div id="frontContent"></div>
+<div class='front_quick_search'>
+		<input id='fr_search' onKeyUp="billProductSearch();" onfocus="$(this).val('').css('color','#000');" onblur="$(this).val('Поиск').css('color','#aaa');" value='Поиск'/>
+		<div id='fr_search_result' class='ac_results'></div>
+		</div><div class='front_update'><span onclick="menu('','front','front_update');">Обновить</span></div>
+<div class="tooltip" id='bill_sale_tooltip'>
+	<div class='tooltip_content'>
+	<table border="0" cellpadding="0" cellspacing="0">
+   <tr valign="top">
+   <td>
+   <div class='tooltip_list center' id='billSale'>
+	<div class='item' onclick="setSale('0');">Без скидки</div>
+	<div class='item' onclick="setSale('5');">-5%</div><div class='item' onclick="setSale('7');">-7%</div><div class='item' onclick="setSale('10');">-10%</div><div class='item' onclick="setSale('50');">-50%</div><div class='item' onclick="setSale('100');">-100%</div><div class='item' onclick="setSale('value');">Cуммой</div>   </div>
+   </td>
+	   </tr>
+   </table>
+   </div>
+	<div class="tooltip_arrow"></div>
+</div>
+
+<div class="tooltip" id='bill_persons_tooltip'>
+	<div class='tooltip_content'>
+   <table border='0' cellpadding='0' cellspacing='0'><tr valign='top'></tr></table>   </div>
+   <div class="tooltip_arrow"></div>
+</div>
+
+<div class="tooltip" id='bill_client_options'>
+	<div class='tooltip_content'></div>
+   <div class="tooltip_arrow"></div>
+</div>
+</div>
+    <div class="section" id="orders"><div class="orders_tabs" id='noprint'>
+	<div class="orders_tab order current">
+   
+	Заказы <span ><b><span id='orders_data_count'>0</span></b>
+	<span class='filter_sep'>|</span> Средний чек <b><span id='orders_data_sred'>0</span></b> грн.
+	<span class='filter_sep'>|</span> Выручка <b><span id='orders_data_total'>0</span></b> грн.</span>   </div>
+	<div class='orders_tab map' id='map_button' onclick="menu('map','map','');"><span></span>Карта</div>
+	<div class='orders_tab buttons'>
+   	<span class='icon print' onclick='myPrint();' id='noprint'></span>
+		<span class='icon search' onclick='orderSearchWindow();' id='noprint'></span>
+	</div>
+</div>
+
+<div class="radius" style="padding-bottom:20px;">
+   <table width='100%' border='0' cellspacing='0' cellpadding='0'><tr class='tr_order_title' align='left'><td>
+	<select id='filter_order_date' onchange="ordersList();" style='max-width:180px;'>
+		<option value='datetime1=06.02.2024 00:00:00&datetime2=06.02.2024 23:59:59'>Завтра 06.02.2024</option>
+
+		<option value='datetime1=05.02.2024 00:00:00&datetime2=05.02.2024 23:59:59' selected='selected'>Сегодня 05.02.2024</option>
+		<option value='datetime1=04.02.2024 00:00:00&datetime2=04.02.2024 23:59:59'>Вчера 04.02.2024</option>
+			<option value='datetime1=05.02.2024 00:00:00&datetime2=11.02.2024 23:59:59'>Неделя</option>
+			<option value='datetime1=01.02.2024 00:00:00&datetime2=29.02.2024 23:59:59'>Месяц</option>
+			<option value='period'>Период</option></select></td><select id='serach_period_list' onchange="ordersList();" style='display:none;'>
+		<option value='datetime1=05.02.2024 00:00:00&datetime2=05.02.2024 23:59:59' selected='selected'>Сегодня 05.02.2024</option><option value='datetime1=05.02.2024 00:00:00&datetime2=11.02.2024 23:59:59'>Неделя</option>
+			<option value='datetime1=01.02.2024 00:00:00&datetime2=29.02.2024 23:59:59'>Месяц</option>
+			<option value='datetime1=01.01.2024 00:00:00&datetime2=31.12.2024 23:59:59'>2024 год</option></select><td width='50' align='center'>Сумма</td><td width='100' align='center'>%</td><td width='20'><select id='filter_order_pay' onchange="ordersList();" style='max-width:70px;'><option value='filter_pay=0'>Оплата</option><option value='filter_pay='>Не оплачен</option><option value='filter_pay=1' >Оплачен</option></select></td><td width='50' align='center'>Карта</td><td style='width:130px;'></td><td align='right'><select id='filter_order_waiter' onchange="ordersList();" style='max-width:130px;'>
+	<option value='filter_waiter=0'>Все сотрудники</option>
+	<option value='filter_waiter=*'>С сотрудником</option>
+	<option value='filter_waiter='>Без сотрудника</option>
+	<optgroup label='Сотрудники'><option value='filter_waiter=1649'>Петров В. В.</option></optgroup></select></td><td width='150' align='left'><select id='filter_order_status' onchange="ordersList();" style='max-width:130px;'><option value='filter_status'>Все статусы</option><option value='filter_status=1'>Новый</option><option value='filter_status=3'>В производстве</option><option value='filter_status=12'>Произведен</option><option value='filter_status=4'>В пути</option><option value='filter_status=10'>Выполнен</option><option value='filter_status=11'>Списан</option></select></td><td width='16'></td></tr><tbody id='orders_content'></tbody></table><div id='filter_orders' class='tooltip'>
+	<div class='tooltip_content'>
+	<table border='0' cellpadding='0' cellspacing='0' style='margin:15px;'>
+	<tr height='15'><td colspan='2'>Период с</td></tr>
+	<tr height='25'>
+		<td><input id='periodDate1' name='orderPeriodDate1' value='05.02.2024 00:00:00' class='input' style='width:140px;'></td>
+		<td width='30'><span class='icon calendar' onclick="displayDatePicker('orderPeriodDate1', false, 'dmy h:i:s', '.');"></span></td>
+	</tr>
+	<tr height='15'><td colspan='2'>по</td></tr>
+	<tr height='25'>
+		<td><input id='periodDate2' name='orderPeriodDate2' value='05.02.2024 23:59:59' class='input' style='width:140px'></td>
+		<td><span class='icon calendar' onclick="displayDatePicker('orderPeriodDate2', false, 'dmy h:i:s', '.');"></span></td>
+	</tr>
+	<tr height='15'><td colspan='2'></td></tr>
+	<tr height='40' align='left'>
+		<td colspan='2'>
+		<span onclick="ordersList('','period');" class='btn save'>Применить</span>
+		<span onclick="$('#filter_orders').hide();$('#filter_order_date option:first').attr('selected', 'selected');" class='btn grey'>Закрыть</span>
+		</td>
+	</tr>
+	</table>
+	</div>
+	<div class='tooltip_arrow'></div>
+	</div>	<div id="order_more"><span onclick="ordersListMore();" class='btn grey'>Загрузить еще</span></div>
+</div>
+</div>
+    <div class="section" id="map"></div>
+    <div class="section" id="catalog"></div>
+    <div class="section" id="component"></div>
+    <div class="section" id="employee"></div>
+    <div class="section" id="distributor"></div>
+    <div class="section" id="client"></div>
+    <div class="section" id="timesheet"></div>
+    <div class="section" id="cashbox"></div>
+    <div class="section" id="reason"></div>
+    <div class="section" id="s_orders"></div>
+    <div class="section" id="s_writeoff"></div>
+    <div class="section" id="s_revis"></div>
+    <div class="section" id="users"></div>
+	 <div class="section" id="couriers"></div>
+    <div class="section" id="sale"></div>
+    <div class="section" id="settings"></div>
+    <div class="section" id="print_settings"></div>
+    <div class="section" id="auto"></div>
+    <div class="section" id="payment"></div>
+    <div class="section" id="edi"></div>
+    <div class="section" id="stat"></div>
+    <div class="section" id="reports"></div>
+    <div class="section" id="affiliates"></div>
+    <div class="section" id="certificate"></div>
+    <div class="section" id="margin"></div>
+    <div class="section" id="street"></div>
+    <div class="section" id="square"></div>
+    <div class="section" id="orders_map"></div>
+    <div class="section" id="shedule"></div>
+    <div class="section" id="point"></div>
+    <div class="section" id="marketing"></div>
+    <div class="section" id="s_issue"></div>
+    <div class="section" id="status"></div>
+    <div class="section" id="s_stock"></div>
+    <div class="section" id="distrib"></div>
+    <div class="section" id="pay_types"></div>
+    <div class="section" id="costs"></div>
+    <div class="section" id="tags"></div>
+    <div class="section" id="salary"></div>
+    <div class="section" id="positions"></div>
+    <div class="section" id="workshop"></div>
+    <div class="section" id="s_movement"></div>
+</div>
+<div id="status_list"></div>
+<div id="wait"><div>Загрузка...</div></div>
+<div id="wait2"></div>
+<div id='popup_tel'></div>
+<div id="overlay" class='overlay'><div id="popup" class="popup"></div></div>
+
+<audio id='sound'>
+<source src='css/audio/sound.ogg' type='audio/ogg'>
+<source src='css/audio/sound.mp3' type='audio/mpeg'>
+<source src='css/audio/sound.wav' type='audio/wav'>
+</audio><iframe id="print_frame" name="print_frame" style="height:0px; border:none;"></iframe>
+</body>
+</html>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter16873678 = new Ya.Metrika({id:16873678,
+					trackLinks:true,
+                    accurateTrackBounce:true,
+                    ut:"noindex"});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<!-- /Yandex.Metrika counter -->
